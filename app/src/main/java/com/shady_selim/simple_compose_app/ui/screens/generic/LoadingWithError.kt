@@ -19,15 +19,15 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.airbnb.lottie.compose.LottieAnimation
 import com.airbnb.lottie.compose.LottieCompositionSpec
 import com.airbnb.lottie.compose.rememberLottieComposition
 import com.shady_selim.simple_compose_app.R
-import com.shady_selim.simple_compose_app.ui.screens.home.TrendingUserState
 
 @Composable
-fun LoadingWithError(state: TrendingUserState.Error) {
+fun LoadingWithError() {
     Row {
         Spacer(modifier = Modifier.width(32.dp))
         Column(
@@ -40,11 +40,11 @@ fun LoadingWithError(state: TrendingUserState.Error) {
             LottieAnimation(composition)
             Spacer(modifier = Modifier.height(16.dp))
             Text(
-                text = "Something went wrong..",
+                text = stringResource(R.string.something_went_wrong),
                 style = MaterialTheme.typography.headlineSmall
             )
             Text(
-                text = "An alien is probably blocking your signal",
+                text = stringResource(R.string.an_alien_is_probably_blocking_your_signal),
                 style = MaterialTheme.typography.bodyLarge,
                 color = Color.DarkGray
             )
@@ -55,7 +55,7 @@ fun LoadingWithError(state: TrendingUserState.Error) {
                 colors = ButtonDefaults.outlinedButtonColors(contentColor = Color.Green),
                 shape = RoundedCornerShape(15)
             ) {
-                Text(text = "RETRY")
+                Text(text = stringResource(R.string.retry))
             }
         }
     }

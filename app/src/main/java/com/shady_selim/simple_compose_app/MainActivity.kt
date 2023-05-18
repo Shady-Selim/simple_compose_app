@@ -19,6 +19,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
@@ -43,7 +44,7 @@ class MainActivity : ComponentActivity() {
                     Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
                         Row {
                             Text(
-                                text = "Trending",
+                                text = stringResource(R.string.trending),
                                 textAlign = TextAlign.Center,
                                 style = MaterialTheme.typography.headlineLarge,
                                 modifier = Modifier.weight(1.0f)
@@ -84,7 +85,7 @@ fun TrendingUserScreen(state: TrendingUserState) {
 
         is TrendingUserState.Error -> {
             //Text(text = "Error: ${state.message}")
-            LoadingWithError(state)
+            LoadingWithError()
         }
     }
 }
